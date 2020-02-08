@@ -168,7 +168,9 @@ class ui_window(tk.Frame):
 
             if self.delete_old_data_var.get() == 1:
                 os.remove(self.open_file)
-                self.open_file = converter_data["dir"] + "/" + self.rename_box.get() + "." + extension
+                converter_data["open_file"] = converter_data["dir"] + "/" + self.rename_box.get() + "." + extension
+                self.open_file = converter_data["open_file"]
+                self.open_file_var.set(self.open_file)
 
             self.put_log("blue", "Done")
 
